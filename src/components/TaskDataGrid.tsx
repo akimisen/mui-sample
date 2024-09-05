@@ -240,18 +240,6 @@ export default function FullFeaturedCrudGrid() {
             maxHeight: '40px !important',  // 调整行高
             minHeight: '40px !important',
           },
-          // '& .MuiDataGrid-cell': {
-          //   paddingTop: '4px !important',  // 调整单元格内边距
-          //   paddingBottom: '4px !important',
-          // },
-          // '& .MuiDataGrid-columnHeaders': {
-          //   maxHeight: '40px !important',  // 调整表头高度
-          //   minHeight: '40px !important',
-          // },
-          // '& .MuiDataGrid-columnHeader': {
-          //   paddingTop: '4px !important',  // 调整表头单元格内边距
-          //   paddingBottom: '4px !important',
-          // },
         }}
         editMode="row"
         rowModesModel={rowModesModel}
@@ -266,10 +254,10 @@ export default function FullFeaturedCrudGrid() {
         }}
         initialState={{
           pagination: {
-            paginationModel: { pageSize: 5 },
+            paginationModel: { pageSize: 10 },
           },
         }}
-        pageSizeOptions={[5, 20, 50]}
+        pageSizeOptions={[10, 20, 50]}
         autoHeight // 添加这个属性让 DataGrid 自适应高度
       />
     </Box>

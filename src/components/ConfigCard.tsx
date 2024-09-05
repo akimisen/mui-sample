@@ -29,14 +29,18 @@ export default function ConfigCard({ }: ConfigCardProps) {
   return (
     <Card sx={{ 
         minWidth: 275, 
-        minHeight: 160,
+        minHeight: 120,
         bgcolor: 'background.paper',
         marginBottom: 2,
       }}>
         <CardContent>
-          <Box display="flex" flexDirection="column" gap={2}>
-            <div>Test Configs</div>
-            <Box display="flex" flexWrap="wrap" gap={2}>
+          <Box display="flex" flexDirection="column" gap={1.2}> {/* 增加垂直间距 */}
+            <Box 
+              display="flex" 
+              flexWrap="wrap" 
+              gap={1.2} // 增加水平和垂直间距
+              alignItems="center" // 垂直居中对齐项目
+            >
               {Object.entries(checkboxStates).map(([key, value]) => (
                 <FormControlLabel
                   key={key}
@@ -48,9 +52,13 @@ export default function ConfigCard({ }: ConfigCardProps) {
                     />
                   }
                   label={`Configuration ${key}`}
+                  sx={{
+                    height: '30px', // 设置固定高度
+                    margin: 0, // 移除默认边距
+                  }}
                 />
               ))}
-              <FormControl sx={{ minWidth: 120 }}>
+              <FormControl sx={{ minWidth: 120, height: '30px' }}> {/* 设置固定高度 */}
                 <InputLabel id="config-select-label-1">Select Option</InputLabel>
                 <Select
                   labelId="config-select-label-1"
@@ -63,7 +71,7 @@ export default function ConfigCard({ }: ConfigCardProps) {
                   <MenuItem value="option3">Option 3</MenuItem>
                 </Select>
               </FormControl>
-              <FormControl sx={{ minWidth: 120 }}>
+              <FormControl sx={{ minWidth: 120, height: '30px' }}> {/* 设置固定高度 */}
                 <InputLabel id="config-select-label-2">Another Select</InputLabel>
                 <Select
                   labelId="config-select-label-2"
